@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnopvqsfp8d5e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sbh5i"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxwgp"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.934372, 0.356298, 0, -0.356298, 0.934372, 0, 4.22652, 12.6313)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.882554, 0.470211, 0, -0.470211, 0.882554, 0, 8.67336, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_sbh5i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_xxwgp")
