@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnopvqsfp8d5e"]
+[gd_scene load_steps=4 format=3 uid="uid://cnopvqsfp8d5e"]
+
+[ext_resource type="PackedScene" uid="uid://bnf8b0hj1xgf2" path="res://scenes/block.tscn" id="1_cewtq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sbh5i"]
 size = Vector3(10, 0.5, 10)
@@ -23,3 +25,6 @@ mesh = SubResource("BoxMesh_sbh5i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_xxwgp")
+
+[node name="Block" parent="." instance=ExtResource("1_cewtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.35289, 0)
