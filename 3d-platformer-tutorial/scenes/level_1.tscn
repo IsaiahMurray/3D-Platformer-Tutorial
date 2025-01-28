@@ -14,10 +14,10 @@ size = Vector3(10, 0.5, 10)
 transform = Transform3D(1, 0, 0, 0, 0.934372, 0.356298, 0, -0.356298, 0.934372, 0, 4.22652, 12.6313)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.882554, 0.470211, 0, -0.470211, 0.882554, 0, 8.67336, 0)
+transform = Transform3D(0.0830993, 0.513125, -0.854282, -0.00425761, 0.857422, 0.514597, 0.996532, -0.0391255, 0.0734358, -14.1993, 13.8174, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+transform = Transform3D(1.57438, 0, 0, 0, 1, 0, 0, 0, 1.60515, 0, -0.139218, 0)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -26,5 +26,31 @@ mesh = SubResource("BoxMesh_sbh5i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_xxwgp")
 
-[node name="Block" parent="." instance=ExtResource("1_cewtq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.35289, 0)
+[node name="FallingBlocks" type="Node3D" parent="."]
+
+[node name="Block" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.437172, 0.631898, 0.639989, -0.822372, 0.568949, 0, -0.364121, -0.526309, 0.768384, -2.16433, 8.69854, 1.98282)
+
+[node name="Block2" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.914148, -0.356397, 0.19317, 0.405381, 0.803688, -0.435605, 0, 0.476514, 0.879167, -1.19341, 6.80563, -1.0065)
+
+[node name="Block6" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(-0.408448, 0.585545, 0.70022, 0.405381, 0.803688, -0.435605, -0.817825, 0.105934, -0.565633, 2.43826, 6.80563, 3.42243)
+
+[node name="Block5" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(-0.243803, -0.924557, 0.29284, 0.0752379, -0.319072, -0.944739, 0.966902, -0.208298, 0.147352, -3.93722, 5.22534, 3.31006)
+
+[node name="Block3" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.945103, 0, 0.326773, 0.216295, 0.74958, -0.625577, -0.244942, 0.661914, 0.70843, 0.565655, 5.35289, 1.63306)
+
+[node name="Block8" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.0639305, -0.86162, -0.503512, -0.371656, -0.488806, 0.789266, -0.926167, 0.136675, -0.351476, 0.880225, 9.08412, -4.58785)
+
+[node name="Block9" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.945103, 1.24759e-08, 0.326773, -0.3194, 0.211222, 0.92378, -0.0690217, -0.977438, 0.199627, -4.81261, 6.91545, -2.83592)
+
+[node name="Block7" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.945103, 0, 0.326773, 0.216295, 0.74958, -0.625577, -0.244942, 0.661914, 0.70843, -4.18611, 7.49525, 5.50355)
+
+[node name="Block4" parent="FallingBlocks" instance=ExtResource("1_cewtq")]
+transform = Transform3D(0.842744, 0, -0.538315, -0.340995, 0.773785, -0.533835, 0.41654, 0.633448, 0.652102, 2.14297, 5.57795, -1.47006)
