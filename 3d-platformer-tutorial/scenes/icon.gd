@@ -4,7 +4,7 @@ var coins = 5
 var player_name = "robot"
 var hearts = 2.5
 var SPEED = 2
-
+var x = coins / SPEED
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
