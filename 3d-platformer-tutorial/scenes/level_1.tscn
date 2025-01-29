@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c511vl5patgmo" path="res://player.tscn" id="2_mxpfi"]
 [ext_resource type="Script" path="res://player.gd" id="3_n1us6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sbh5i"]
-size = Vector3(10, 0.5, 10)
+[sub_resource type="BoxMesh" id="BoxMesh_11k7u"]
+size = Vector3(20, 1, 20)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xxwgp"]
-size = Vector3(10, 0.5, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w10j"]
+size = Vector3(20, 1, 20)
 
 [node name="Level1" type="Node3D"]
 
@@ -19,14 +19,12 @@ transform = Transform3D(1, 0, 0, 0, 0.934372, 0.356298, 0, -0.356298, 0.934372, 
 transform = Transform3D(0.0830993, 0.513125, -0.854282, -0.00425761, 0.857422, 0.514597, 0.996532, -0.0391255, 0.0734358, -14.1993, 13.8174, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1.57438, 0, 0, 0, 1, 0, 0, 0, 1.60515, 0, -0.139218, 0)
-metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("BoxMesh_sbh5i")
+mesh = SubResource("BoxMesh_11k7u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("BoxShape3D_xxwgp")
+shape = SubResource("BoxShape3D_2w10j")
 
 [node name="FallingBlocks" type="Node3D" parent="."]
 
