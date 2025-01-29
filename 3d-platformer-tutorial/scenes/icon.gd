@@ -15,4 +15,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
-		rotate_y(deg_to_rad(SPEED)) #takes in radians instead of degrees
+		rotate_y(deg_to_rad(-SPEED)) #takes in radians instead of degrees
+	elif Input.is_action_pressed("ui_right"): 
+			rotate_y(deg_to_rad(SPEED))
