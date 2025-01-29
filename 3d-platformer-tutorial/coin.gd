@@ -9,12 +9,9 @@ func rotate_coin() -> void:
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate_coin()
 
-
-
 func _on_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+	queue_free() # Replace with function body.
