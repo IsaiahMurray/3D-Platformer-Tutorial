@@ -1,24 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://blyulifctuxim"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_71m4f"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ntf6l"]
-top_radius = 0.3
-bottom_radius = 0.3
-height = 0.1
+[ext_resource type="PackedScene" uid="uid://ca1vaa6ty73pc" path="res://assets/z_coin.glb" id="2_wrahy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ul18f"]
-size = Vector3(0.6, 0.15, 0.6)
+size = Vector3(2, 0.3, 2)
 
 [node name="Coin" type="Area3D"]
 script = ExtResource("1_71m4f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_ntf6l")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0233338, 1.01995e-09)
 shape = SubResource("BoxShape3D_ul18f")
+
+[node name="z_coin" parent="." instance=ExtResource("2_wrahy")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
