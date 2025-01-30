@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnopvqsfp8d5e"]
+[gd_scene load_steps=13 format=3 uid="uid://cnopvqsfp8d5e"]
 
 [ext_resource type="PackedScene" uid="uid://bnf8b0hj1xgf2" path="res://scenes/block.tscn" id="1_cewtq"]
 [ext_resource type="PackedScene" uid="uid://c511vl5patgmo" path="res://player.tscn" id="2_mxpfi"]
@@ -17,6 +17,20 @@ size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2w10j"]
 size = Vector3(20, 1, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_23iua"]
+sky_top_color = Color(0.562029, 0.27301, 0.816479, 1)
+sky_horizon_color = Color(0.432126, 0.737165, 0.489319, 1)
+ground_bottom_color = Color(0.137947, 0.114357, 0.0869545, 1)
+ground_horizon_color = Color(0.431373, 0.737255, 0.490196, 1)
+ground_curve = 0.00757873
+
+[sub_resource type="Sky" id="Sky_e65sh"]
+sky_material = SubResource("ProceduralSkyMaterial_23iua")
+
+[sub_resource type="Environment" id="Environment_sithj"]
+background_mode = 2
+sky = SubResource("Sky_e65sh")
 
 [node name="Level1" type="Node3D"]
 
@@ -89,3 +103,6 @@ transform = Transform3D(0.00450304, 0, 0.99999, 0, 1, 0, -0.99999, 0, 0.00450304
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1089, 0)
 texture = ExtResource("4_i75v6")
 script = ExtResource("5_a306l")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sithj")
