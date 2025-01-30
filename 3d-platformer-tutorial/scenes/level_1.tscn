@@ -21,9 +21,6 @@ size = Vector3(20, 1, 20)
 
 [node name="Level1" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.934372, 0.356298, 0, -0.356298, 0.934372, 0, 4.22652, 12.6313)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.0830993, 0.513125, -0.854282, -0.00425761, 0.857422, 0.514597, 0.996532, -0.0391255, 0.0734358, -14.1993, 13.8174, 0)
 
