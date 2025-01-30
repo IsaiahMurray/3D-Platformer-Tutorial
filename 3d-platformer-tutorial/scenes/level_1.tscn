@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnopvqsfp8d5e"]
+[gd_scene load_steps=10 format=3 uid="uid://cnopvqsfp8d5e"]
 
 [ext_resource type="PackedScene" uid="uid://bnf8b0hj1xgf2" path="res://scenes/block.tscn" id="1_cewtq"]
 [ext_resource type="PackedScene" uid="uid://c511vl5patgmo" path="res://player.tscn" id="2_mxpfi"]
@@ -7,7 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://blyulifctuxim" path="res://coin.tscn" id="4_jeteg"]
 [ext_resource type="Script" path="res://scenes/icon.gd" id="5_a306l"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wju3"]
+albedo_color = Color(0.266667, 0, 1, 0.835294)
+roughness = 0.5
+
 [sub_resource type="BoxMesh" id="BoxMesh_11k7u"]
+material = SubResource("StandardMaterial3D_8wju3")
 size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2w10j"]
@@ -59,7 +64,7 @@ transform = Transform3D(0.945103, 0, 0.326773, 0.216295, 0.74958, -0.625577, -0.
 transform = Transform3D(0.842744, 0, -0.538315, -0.340995, 0.773785, -0.533835, 0.41654, 0.633448, 0.652102, 6.36841, 5.57795, -3.23066)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_mxpfi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18755, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00614452, 1.65797, 0.0028007)
 script = ExtResource("3_n1us6")
 
 [node name="Coins" type="Node3D" parent="."]
