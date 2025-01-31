@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c511vl5patgmo"]
+[gd_scene load_steps=4 format=3 uid="uid://c511vl5patgmo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ajmah"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wv4h8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4spv6"]
 
@@ -8,6 +10,10 @@
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_ajmah")
+
+[node name="Face" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.77349, 0, 0, 0, 0.317265, 0, 0, 0, 0.602063, 0, 0.385654, -0.336165)
+mesh = SubResource("BoxMesh_wv4h8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4spv6")
