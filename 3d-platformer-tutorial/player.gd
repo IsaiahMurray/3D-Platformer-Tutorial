@@ -22,10 +22,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	# New Vector 3 to account for user arrow inputs and camera rotation
 	var direction = ($Camera_Controller.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	# Rotate character mesh to face the direction the player is moving
+	if input_dir != Vector2(0, 0):
+		$MeshInstance3D.rotation_degrees.y = $Camera_Controller.rotation_degrees.y - rad_to_deg(input_dir.angle()) - 90
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
