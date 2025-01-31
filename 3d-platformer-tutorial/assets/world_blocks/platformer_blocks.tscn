@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://kie3ydmeaoq3"]
+
+[ext_resource type="PackedScene" uid="uid://1adv8pdoffey" path="res://assets/Models/platformer_blocks.glb" id="1_hkxxk"]
+
+[node name="platformer_blocks" instance=ExtResource("1_hkxxk")]
