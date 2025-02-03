@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	# Rotatae the character to align with the floor
 	if is_on_floor():
 		align_with_floor($RayCast3D.get_collision_normal())
-		global_transform = xForm
+		global_transform = global_transform.interpolate_with(xForm, 0.3)
 		
 	# Update velocity and move character
 	if direction:
