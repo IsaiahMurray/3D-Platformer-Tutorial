@@ -52,3 +52,5 @@ func _physics_process(delta: float) -> void:
 func align_with_floor(floor_normal):
 	xForm = global_transform
 	xForm.basis.y = floor_normal
+	xForm.basis.x = -xForm.basis.z.cross(floor_normal)
+	xForm.basis = xForm.basis.orthonormalized()
