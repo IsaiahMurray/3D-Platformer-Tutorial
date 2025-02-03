@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 12
+
+var xForm : Transform3D
 
 func _physics_process(delta: float) -> void:
 	
@@ -30,6 +31,13 @@ func _physics_process(delta: float) -> void:
 	# Rotate character mesh to face the direction the player is moving
 	if input_dir != Vector2(0, 0):
 		$MeshInstance3D.rotation_degrees.y = $Camera_Controller.rotation_degrees.y - rad_to_deg(input_dir.angle()) - 90
+	
+	# Rotatae the character to align with the floor
+	if is_on_floor():
+		align_with_floor($RayCast3D.get_collision_normal())
+		global_transform = xForm
+		
+	# Update velocity and move character
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -40,3 +48,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	# Make camera controller to match root position of player
 	$Camera_Controller.position = lerp($Camera_Controller.position,position,0.15)
+
+func align_with_floor(floor_normal):
+	xForm = global_transform
+	xForm.basis.y = floor_normal
