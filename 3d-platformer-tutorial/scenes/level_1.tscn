@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnopvqsfp8d5e"]
+[gd_scene load_steps=10 format=3 uid="uid://cnopvqsfp8d5e"]
 
 [ext_resource type="PackedScene" uid="uid://bnf8b0hj1xgf2" path="res://scenes/block.tscn" id="1_cewtq"]
 [ext_resource type="PackedScene" uid="uid://c511vl5patgmo" path="res://player.tscn" id="2_mxpfi"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://scenes/icon.gd" id="5_a306l"]
 [ext_resource type="Environment" uid="uid://bsw0k5was46ld" path="res://assets/Environments/level_1.tres" id="7_e3ygo"]
 [ext_resource type="MeshLibrary" uid="uid://ur8cf8ujp0wk" path="res://assets/world_blocks/world_blocks_v1.tres" id="8_m1osi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1b7q"]
+size = Vector3(1.37595, 1, 1.52417)
 
 [node name="Level1" type="Node3D"]
 
@@ -110,3 +113,5 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(86.9103, 0, 0, 0, 0.511536, 0, 0, 0, 45.5416, 6.99277, -13.1326, 0.850569)
+shape = SubResource("BoxShape3D_s1b7q")
