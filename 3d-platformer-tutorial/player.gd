@@ -56,3 +56,7 @@ func align_with_floor(floor_normal):
 	xForm.basis.y = floor_normal
 	xForm.basis.x = -xForm.basis.z.cross(floor_normal)
 	xForm.basis = xForm.basis.orthonormalized()
+
+
+func _on_fall_zone_body_entered(body: Node3D) -> void:
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")

@@ -10,7 +10,7 @@
 [ext_resource type="MeshLibrary" uid="uid://ur8cf8ujp0wk" path="res://assets/world_blocks/world_blocks_v1.tres" id="8_m1osi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s1b7q"]
-size = Vector3(1.37595, 1, 1.52417)
+size = Vector3(120, 1, 120)
 
 [node name="Level1" type="Node3D"]
 
@@ -110,8 +110,10 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="FallZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.38215, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(86.9103, 0, 0, 0, 0.511536, 0, 0, 0, 45.5416, 6.99277, -13.1326, 0.850569)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone"]
 shape = SubResource("BoxShape3D_s1b7q")
+
+[connection signal="body_entered" from="FallZone" to="CharacterBody3D" method="_on_fall_zone_body_entered"]
