@@ -28,3 +28,5 @@ transform = Transform3D(1, 0, 0, 0, 0.950146, 0.311804, 0, -0.311804, 0.950146, 
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="FallZone" type="Area3D" parent="."]
