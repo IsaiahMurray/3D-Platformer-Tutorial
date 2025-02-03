@@ -36,7 +36,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		align_with_floor($RayCast3D.get_collision_normal())
 		global_transform = global_transform.interpolate_with(xForm, 0.3)
-		
+	elif not is_on_floor():	
+		align_with_floor(Vector3.UP)
+		global_transform = global_transform.interpolate_with(xForm, 0.3)
 	# Update velocity and move character
 	if direction:
 		velocity.x = direction.x * SPEED
