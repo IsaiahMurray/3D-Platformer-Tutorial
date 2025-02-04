@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 	rotate_coin()
 
 func _on_body_entered(body: Node3D) -> void:
+	$AnimationPlayer.play("bounce")
 	queue_free() # Replace with function body.
