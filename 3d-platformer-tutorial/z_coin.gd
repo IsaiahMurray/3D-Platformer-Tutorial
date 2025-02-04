@@ -15,4 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	$AnimationPlayer.play("bounce")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	queue_free() # Replace with function body.
