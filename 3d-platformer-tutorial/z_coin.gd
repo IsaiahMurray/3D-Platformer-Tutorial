@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 	rotate_coin()
 
 func _on_body_entered(body: Node3D) -> void:
+	Global.coins += 1
+	print("You have ", Global.coins, " coins")
 	set_collision_layer_value(3, false) # Turn layer 3 off
 	set_collision_mask_value(1, false) # Turn mask 1 off
 	$AnimationPlayer.play("bounce") # Play bounce animation
