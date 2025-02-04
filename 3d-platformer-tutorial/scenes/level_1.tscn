@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnopvqsfp8d5e"]
+[gd_scene load_steps=12 format=3 uid="uid://cnopvqsfp8d5e"]
 
 [ext_resource type="Script" path="res://assets/scripts/level_1.gd" id="1_4bn1u"]
 [ext_resource type="PackedScene" uid="uid://bnf8b0hj1xgf2" path="res://assets/Models/block.tscn" id="1_cewtq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://assets/scripts/icon.gd" id="5_a306l"]
 [ext_resource type="Environment" uid="uid://bsw0k5was46ld" path="res://assets/Environments/level_1.tres" id="7_e3ygo"]
 [ext_resource type="MeshLibrary" uid="uid://ur8cf8ujp0wk" path="res://assets/world_blocks/world_blocks_v1.tres" id="8_m1osi"]
+[ext_resource type="PackedScene" uid="uid://d337ddpecgxuw" path="res://scenes/UI/hud.tscn" id="10_8urfr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s1b7q"]
 size = Vector3(120, 1, 120)
@@ -120,5 +121,7 @@ collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone"]
 shape = SubResource("BoxShape3D_s1b7q")
+
+[node name="HUD" parent="." instance=ExtResource("10_8urfr")]
 
 [connection signal="body_entered" from="FallZone" to="CharacterBody3D" method="_on_fall_zone_body_entered"]
