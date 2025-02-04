@@ -3,7 +3,7 @@ extends Area3D
 const ROTATION_SPEED = 2 # number of degrees the coin will spin every frame
 
 func rotate_coin() -> void:
-	rotate_y(deg_to_rad(ROTATION_SPEED))
+	rotate_y(deg_to_rad(ROTATION_SPEED)) # Rotate coin
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,9 @@ func _process(delta: float) -> void:
 	rotate_coin()
 
 func _on_body_entered(body: Node3D) -> void:
-	$AnimationPlayer.play("bounce")
+	set_collision_layer_value(3, false) # Turn layer 3 off
+	set_collision_mask_value(1, false) # Turn mask 1 off
+	$AnimationPlayer.play("bounce") # Play bounce animation
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
