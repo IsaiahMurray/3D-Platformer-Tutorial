@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d337ddpecgxuw"]
+[gd_scene load_steps=5 format=3 uid="uid://d337ddpecgxuw"]
 
+[ext_resource type="Script" path="res://scenes/UI/hud.gd" id="1_pynkq"]
 [ext_resource type="Texture2D" uid="uid://dixuyvjk0pv1" path="res://assets/Images/z_coin.png" id="1_wv0dk"]
 [ext_resource type="FontFile" uid="uid://3hmjr2darjhv" path="res://assets/Fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_1qn2b"]
 
@@ -11,6 +12,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_pynkq")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 26.0
