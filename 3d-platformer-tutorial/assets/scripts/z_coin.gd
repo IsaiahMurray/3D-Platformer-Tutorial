@@ -20,6 +20,7 @@ func _on_body_entered(body: Node3D) -> void:
 	set_collision_mask_value(1, false) # Turn mask 1 off
 	$AnimationPlayer.play("bounce") # Play bounce animation
 	if Global.coins >= Global.COINS_TO_WIN:
+		Global.coins = 0
 		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
